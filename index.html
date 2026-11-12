@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jejak Insan: Manusia sebagai Makhluk Tuhan, Hidup, & Sosial</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            850: '#0c4a6e',
+                        },
+                        leafGreen: '#16a34a',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0ea5e9;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-ocean-50 font-sans text-gray-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header & Navigasi -->
+    <header class="bg-ocean-850 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white/10 p-2.5 rounded-xl text-leafGreen">
+                    <i class="fa-solid fa-earth-asia text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight">Jejak Insan Interaktif</h1>
+                    <p class="text-xs text-ocean-100">PAI Kelas 7 • Kurikulum Merdeka</p>
+                </div>
+            </div>
+            
+            <!-- Navbar Menu Buttons -->
+            <nav class="flex space-x-1 sm:space-x-2 mt-2 sm:mt-0 overflow-x-auto py-1">
+                <button onclick="switchTab('beranda')" id="btn-beranda" class="nav-btn px-3 py-1.5 rounded-lg text-sm font-medium transition bg-white/20 text-white flex items-center space-x-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-house"></i><span>Beranda</span>
+                </button>
+                <button onclick="switchTab('literasi')" id="btn-literasi" class="nav-btn px-3 py-1.5 rounded-lg text-sm font-medium transition text-ocean-100 hover:bg-white/10 flex items-center space-x-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-book-open-reader"></i><span>1. Literasi</span>
+                </button>
+                <button onclick="switchTab('materi')" id="btn-materi" class="nav-btn px-3 py-1.5 rounded-lg text-sm font-medium transition text-ocean-100 hover:bg-white/10 flex items-center space-x-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-shapes"></i><span>2. 3 Pilar</span>
+                </button>
+                <button onclick="switchTab('game')" id="btn-game" class="nav-btn px-3 py-1.5 rounded-lg text-sm font-medium transition text-ocean-100 hover:bg-white/10 flex items-center space-x-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-gamepad"></i><span>3. Mini-Game</span>
+                </button>
+                <button onclick="switchTab('kuis')" id="btn-kuis" class="nav-btn px-3 py-1.5 rounded-lg text-sm font-medium transition text-ocean-100 hover:bg-white/10 flex items-center space-x-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-square-poll-vertical"></i><span>4. Kuis HOTS</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-6xl w-full mx-auto p-4 sm:p-6">
+
+        <!-- TAB 1: BERANDA -->
+        <section id="tab-beranda" class="tab-content fade-in space-y-6">
+            <div class="bg-gradient-to-br from-ocean-700 to-ocean-850 text-white rounded-2xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-10 translate-y-10">
+                    <i class="fa-solid fa-users-rectangle text-9xl"></i>
+                </div>
+                <div class="relative z-10 max-w-2xl">
+                    <span class="bg-leafGreen text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Bab PAI • Kurikulum Merdeka</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-4">Manusia sebagai Makhluk Tuhan, Makhluk Hidup, & Makhluk Sosial</h2>
+                    <p class="text-ocean-100 text-sm sm:text-base leading-relaxed mb-6">
+                        Mari selami hakikat penciptaan kita sebagai hamba Allah yang taat, individu biologis yang menjaga kesehatan jasmani, serta makhluk sosial yang berakhlak mulia di masyarakat dan era digital.
+                    </p>
+                    <button onclick="switchTab('literasi')" class="bg-leafGreen hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg transition flex items-center space-x-2">
+                        <span>Mulai Petualangan Belajar</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Peta Modul Cepat -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div onclick="switchTab('literasi')" class="bg-white p-5 rounded-2xl shadow-sm border border-ocean-100 hover:shadow-md hover:border-ocean-500 transition cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-ocean-50 text-ocean-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-1">1. Dilema Zaki</h3>
+                    <p class="text-xs text-gray-500">Kisah reflektif remaja menyeimbangkan ibadah & sosialisasi.</p>
+                </div>
+                <div onclick="switchTab('materi')" class="bg-white p-5 rounded-2xl shadow-sm border border-ocean-100 hover:shadow-md hover:border-ocean-500 transition cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-green-50 text-leafGreen flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-shapes"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-1">2. Tiga Pilar Manusia</h3>
+                    <p class="text-xs text-gray-500">Eksplorasi dimensi hamba, biologis, dan sosial.</p>
+                </div>
+                <div onclick="switchTab('game')" class="bg-white p-5 rounded-2xl shadow-sm border border-ocean-100 hover:shadow-md hover:border-ocean-500 transition cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-1">3. Mini-Game Peran</h3>
+                    <p class="text-xs text-gray-500">Pilih tindakan bijak dalam skenario kehidupan sehari-hari.</p>
+                </div>
+                <div onclick="switchTab('kuis')" class="bg-white p-5 rounded-2xl shadow-sm border border-ocean-100 hover:shadow-md hover:border-ocean-500 transition cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-1">4. Evaluasi HOTS</h3>
+                    <p class="text-xs text-gray-500">Uji nalar kritis & analisis kasus analitis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: BAGIAN 1 - LITERASI & DILEMA REMAJA -->
+        <section id="tab-literasi" class="tab-content hidden fade-in space-y-6">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-ocean-100">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="bg-ocean-600 text-white p-3 rounded-xl">
+                        <i class="fa-solid fa-book-open-reader text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-ocean-600 uppercase tracking-wider">Bagian 1: Pengantar Literasi Kritis</span>
+                        <h2 class="text-2xl font-bold text-gray-800">Kisah Reflektif: Dilema Zaki di Era Digital</h2>
+                    </div>
+                </div>
+
+                <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4 bg-ocean-50 p-6 rounded-xl border border-ocean-200">
+                    <p>
+                        Zaki adalah seorang siswa kelas 7 yang ceria. Akhir-akhir ini, ia merasa kewalahan mengatur waktunya. Ponsel pintarnya berdering terus-menerus dengan notifikasi dari grup WhatsApp kelas, game online bersama teman-teman sekolah, hingga obrolan media sosial.
+                    </p>
+                    <p>
+                        Suatu malam, adzan Maghrib berkumandang saat Zaki sedang asyik bertanding game online. Ibu memanggilnya untuk shalat berjamaah dan mengingatkan agar ia tidak lupa beristirahat menjaga kesehatan mata serta tubuhnya. Di sisi lain, teman-teman di grup terus mendesaknya untuk online kembali. Zaki terdiam di kamar, merenungkan posisinya: sebagai seorang hamba Allah yang wajib beribadah, sebagai makhluk hidup yang butuh kesehatan fisik, dan sebagai makhluk sosial yang ingin berinteraksi dengan baik.
+                    </p>
+                </div>
+
+                <!-- Kotak Refleksi Nalar Kritis -->
+                <div class="mt-6 p-6 bg-amber-50 rounded-xl border border-amber-200">
+                    <h3 class="font-bold text-amber-800 text-lg mb-2 flex items-center space-x-2">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <span>Pertanyaan Pemantik Nalar Kritis:</span>
+                    </h3>
+                    <p class="text-gray-700 text-sm mb-4">
+                        Berdasarkan dilema Zaki di atas, analisis dan berikan pendapatmu pada kolom berikut:
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <p class="font-medium text-gray-800 text-sm mb-2">1. Mana yang harus didahulukan oleh Zaki antara panggilan ibadah kepada Allah atau ajakan teman di grup? Mengapa?</p>
+                            <input type="text" placeholder="Tuliskan alasan analitis di sini..." class="w-full p-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-ocean-500">
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <p class="font-medium text-gray-800 text-sm mb-2">2. Bagaimana cara Zaki menyeimbangkan kewajiban sebagai makhluk Tuhan, makhluk hidup, dan makhluk sosial secara bersamaan?</p>
+                            <input type="text" placeholder="Tuliskan gagasan solutifmu di sini..." class="w-full p-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-ocean-500">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-end">
+                    <button onclick="switchTab('materi')" class="bg-ocean-600 hover:bg-ocean-700 text-white font-bold px-6 py-2.5 rounded-xl transition flex items-center space-x-2 text-sm">
+                        <span>Lanjut ke 3 Pilar Manusia</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: BAGIAN 2 - PENDALAMAN MATERI (3 PILAR) -->
+        <section id="tab-materi" class="tab-content hidden fade-in space-y-6">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-ocean-100">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="bg-leafGreen text-white p-3 rounded-xl">
+                        <i class="fa-solid fa-shapes text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-leafGreen uppercase tracking-wider">Bagian 2: Pendalaman Materi</span>
+                        <h2 class="text-2xl font-bold text-gray-800">Tiga Pilar Hakikat Manusia</h2>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 text-sm mb-6">
+                    Dalam ajaran Islam dan Kurikulum Merdeka, manusia diciptakan dengan tiga dimensi utama yang saling melengkapi. Pelajari rinciannya di bawah ini:
+                </p>
+
+                <!-- Grid Tiga Pilar -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Pilar 1 -->
+                    <div class="border border-ocean-200 rounded-2xl p-5 bg-ocean-50 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-ocean-600 text-white flex items-center justify-center text-xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-kaaba"></i>
+                            </div>
+                            <span class="bg-ocean-200 text-ocean-800 text-xs font-bold px-2.5 py-1 rounded-md">Pilar 1</span>
+                            <h3 class="text-xl font-bold text-ocean-900 mt-2 mb-2">Makhluk Tuhan YME (Hamba Allah)</h3>
+                            <p class="text-xs text-gray-700 leading-relaxed mb-4">
+                                Manusia diciptakan oleh Allah Swt. semata-mata untuk beribadah kepada-Nya. Memiliki kesadaran spiritual, rasa syukur, serta kepatuhan terhadap perintah dan larangan agama.
+                            </p>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-ocean-100">
+                            <p class="text-xs font-semibold text-gray-700 mb-1">Dalil Naqli:</p>
+                            <p class="text-xs italic text-ocean-700">"Dan tidak aku ciptakan jin dan manusia melainkan supaya mereka menyembah-Ku." (QS. Ad-Dzariyat: 56)</p>
+                        </div>
+                    </div>
+
+                    <!-- Pilar 2 -->
+                    <div class="border border-green-200 rounded-2xl p-5 bg-green-50/50 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-leafGreen text-white flex items-center justify-center text-xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <span class="bg-green-200 text-green-800 text-xs font-bold px-2.5 py-1 rounded-md">Pilar 2</span>
+                            <h3 class="text-xl font-bold text-green-900 mt-2 mb-2">Makhluk Hidup (Biologis)</h3>
+                            <p class="text-xs text-gray-700 leading-relaxed mb-4">
+                                Manusia adalah organisme hidup yang memiliki jasad, butuh makanan halal, air, istirahat, serta wajib menjaga amanah kesehatan fisik dan mental dari hal-hal yang merusak.
+                            </p>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-green-100">
+                            <p class="text-xs font-semibold text-gray-700 mb-1">Penerapan Sehari-hari:</p>
+                            <p class="text-xs text-green-800">Menjaga pola makan sehat, berolahraga teratur, tidur cukup, dan menjauhi zat berbahaya seperti narkoba atau merokok.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pilar 3 -->
+                    <div class="border border-amber-200 rounded-2xl p-5 bg-amber-50/50 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center text-xl mb-4 shadow-sm">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <span class="bg-amber-200 text-amber-900 text-xs font-bold px-2.5 py-1 rounded-md">Pilar 3</span>
+                            <h3 class="text-xl font-bold text-amber-900 mt-2 mb-2">Makhluk Sosial</h3>
+                            <p class="text-xs text-gray-700 leading-relaxed mb-4">
+                                Manusia tidak dapat hidup sendiri dan senantiasa membutuhkan orang lain. Berinteraksi dalam bingkai akhlak mulia, tolong-menolong (ta'awun), serta menjaga persatuan di masyarakat.
+                            </p>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-amber-100">
+                            <p class="text-xs font-semibold text-gray-700 mb-1">Dalil Naqli:</p>
+                            <p class="text-xs italic text-amber-800">"...Dan tolong-menolonglah kamu dalam (mengerjakan) kebajikan dan takwa..." (QS. Al-Ma'idah: 2)</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-6 flex justify-between">
+                    <button onclick="switchTab('literasi')" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-5 py-2.5 rounded-xl transition text-sm">
+                        <i class="fa-solid fa-arrow-left mr-1"></i> Kembali
+                    </button>
+                    <button onclick="switchTab('game')" class="bg-ocean-600 hover:bg-ocean-700 text-white font-bold px-6 py-2.5 rounded-xl transition flex items-center space-x-2 text-sm">
+                        <span>Lanjut ke Mini-Game Peran</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: BAGIAN 3 - MINI-GAME (PILIH PERAN & TINDAKAN BIJAK) -->
+        <section id="tab-game" class="tab-content hidden fade-in space-y-6">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-ocean-100">
+                <div class="flex flex-wrap justify-between items-center mb-6 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-amber-600 text-white p-3 rounded-xl">
+                            <i class="fa-solid fa-gamepad text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Bagian 3: Gamifikasi Naratif</span>
+                            <h2 class="text-2xl font-bold text-gray-800">Tantangan Peran & Tindakan Bijak</h2>
+                        </div>
+                    </div>
+                    <!-- Statistik Skor & Progress -->
+                    <div class="flex items-center space-x-4 bg-ocean-50 px-4 py-2 rounded-xl border border-ocean-200">
+                        <div class="text-center">
+                            <span class="text-xs text-gray-500 block">Poin Peran</span>
+                            <span id="game-score" class="font-bold text-ocean-600 text-lg">0</span>
+                        </div>
+                        <div class="h-6 w-px bg-ocean-200"></div>
+                        <div class="text-center">
+                            <span class="text-xs text-gray-500 block">Skenario</span>
+                            <span id="game-progress" class="font-bold text-gray-800 text-sm">1 / 4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kontainer Area Game -->
+                <div id="game-container" class="bg-ocean-50 p-6 rounded-2xl border border-ocean-200 space-y-6">
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-ocean-100">
+                        <span id="game-category-badge" class="bg-ocean-100 text-ocean-800 text-xs font-bold px-2.5 py-1 rounded-md">Dimensi Manusia</span>
+                        <p id="game-question" class="text-gray-800 font-medium text-base mt-3 leading-relaxed">
+                            Memuat skenario tantangan...
+                        </p>
+                    </div>
+
+                    <!-- Tombol Pilihan Aksi -->
+                    <div id="game-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <!-- Diisi via JavaScript -->
+                    </div>
+
+                    <!-- Feedback / Umpan Balik Analitis -->
+                    <div id="game-feedback" class="hidden p-4 rounded-xl text-sm font-medium">
+                        <!-- Diisi via JS -->
+                    </div>
+                </div>
+
+                <!-- Selesai Game Card -->
+                <div id="game-complete" class="hidden text-center py-8 space-y-4">
+                    <div class="w-20 h-20 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-3xl mx-auto shadow-sm">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Hebat! Misi Peran Selesai</h3>
+                    <p id="game-final-message" class="text-gray-600 text-sm max-w-md mx-auto">
+                        Kamu telah berhasil memilih tindakan bijak sebagai hamba Allah, makhluk biologis, dan makhluk sosial!
+                    </p>
+                    <div class="pt-4 flex justify-center space-x-3">
+                        <button onclick="resetGame()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-5 py-2.5 rounded-xl transition text-sm">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Main Lagi
+                        </button>
+                        <button onclick="switchTab('kuis')" class="bg-ocean-600 hover:bg-ocean-700 text-white font-bold px-6 py-2.5 rounded-xl transition text-sm">
+                            Lanjut ke Kuis HOTS <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-between">
+                    <button onclick="switchTab('materi')" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-5 py-2.5 rounded-xl transition text-sm">
+                        <i class="fa-solid fa-arrow-left mr-1"></i> Kembali
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: BAGIAN 4 - KUIS FORMATIF EVALUASI HOTS -->
+        <section id="tab-kuis" class="tab-content hidden fade-in space-y-6">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-ocean-100">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="bg-purple-600 text-white p-3 rounded-xl">
+                        <i class="fa-solid fa-square-poll-vertical text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Bagian 4: Evaluasi Formatif</span>
+                        <h2 class="text-2xl font-bold text-gray-800">Kuis HOTS & Analisis Kasus</h2>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 text-sm mb-6">
+                    Jawablah 5 soal pilihan ganda berbasis penalaran analitis (Higher Order Thinking Skills) berikut untuk menguji pemahaman materi hakikat manusia.
+                </p>
+
+                <!-- Daftar Soal Kuis -->
+                <div id="quiz-container" class="space-y-6">
+                    <!-- Soal 1 -->
+                    <div class="bg-ocean-50 p-5 rounded-xl border border-ocean-200 space-y-3 quiz-card" data-qid="0">
+                        <div class="flex justify-between items-center">
+                            <span class="bg-ocean-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Soal 1 dari 5</span>
+                            <span class="text-xs text-gray-500 font-medium">Level: Penalaran Analitis (HOTS)</span>
+                        </div>
+                        <p class="font-bold text-gray-800 text-sm sm:text-base">
+                            Manusia diciptakan sebagai hamba Allah sekaligus makhluk sosial. Ketika terjadi bencana alam di suatu daerah, tindakan manakah yang paling tepat mencerminkan keterpaduan kedua dimensi tersebut?
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q0" value="0" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">A. Hanya mendoakan dari rumah tanpa ikut berpartisipasi karena merasa cukup beribadah sendiri.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q0" value="1" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">B. Menggalang bantuan dan turun tangan membantu korban sebagai wujud pengabdian kepada Allah sekaligus kepedulian sosial (ta'awun).</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q0" value="2" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">C. Membantu korban semata-mata agar mendapat pujian dari masyarakat sekitar.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q0" value="3" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">D. Mengabaikan karena urusan bencana adalah tugas pemerintah semata.</span>
+                            </label>
+                        </div>
+                        <div id="expl-0" class="hidden p-3 rounded-lg text-xs mt-2 bg-ocean-100 border border-ocean-300 text-ocean-900">
+                            <strong>Analisis:</strong> Jawaban benar adalah <strong>B</strong>. Integrasi antara hamba Allah dan makhluk sosial diwujudkan dengan amal shalih nyata yang bernilai ibadah sosial.
+                        </div>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="bg-ocean-50 p-5 rounded-xl border border-ocean-200 space-y-3 quiz-card" data-qid="1">
+                        <div class="flex justify-between items-center">
+                            <span class="bg-ocean-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Soal 2 dari 5</span>
+                            <span class="text-xs text-gray-500 font-medium">Level: Pemahaman Konsep Biologis</span>
+                        </div>
+                        <p class="font-bold text-gray-800 text-sm sm:text-base">
+                            Sebagai makhluk hidup (biologis), tubuh manusia adalah amanah dari Allah Swt. Perilaku remaja yang bertentangan dengan prinsip penjagaan diri sebagai makhluk hidup adalah...
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q1" value="0" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">A. Berolahraga secara teratur dan menjaga kebersihan lingkungan sekolah.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q1" value="1" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">B. Begadang setiap malam hanya untuk bermain gim online hingga mengabaikan kesehatan fisik.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q1" value="2" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">C. Mengonsumsi makanan halal dan bergizi seimbang.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q1" value="3" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">D. Istirahat yang cukup agar tubuh memiliki stamina untuk beribadah dan belajar.</span>
+                            </label>
+                        </div>
+                        <div id="expl-1" class="hidden p-3 rounded-lg text-xs mt-2 bg-ocean-100 border border-ocean-300 text-ocean-900">
+                            <strong>Analisis:</strong> Jawaban benar adalah <strong>B</strong>. Begadang berlebihan merusak kesehatan fisik, yang bertentangan dengan kewajiban menjaga amanah tubuh (makhluk biologis).
+                        </div>
+                    </div>
+
+                    <!-- Soal 3 -->
+                    <div class="bg-ocean-50 p-5 rounded-xl border border-ocean-200 space-y-3 quiz-card" data-qid="2">
+                        <div class="flex justify-between items-center">
+                            <span class="bg-ocean-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Soal 3 dari 5</span>
+                            <span class="text-xs text-gray-500 font-medium">Level: Analisis Interaksi Sosial</span>
+                        </div>
+                        <p class="font-bold text-gray-800 text-sm sm:text-base">
+                            Di era digital saat ini, sebagian remaja menjadi kecanduan gawai dan menarik diri dari pergaulan langsung di masyarakat (individualistis). Berdasarkan konsep makhluk sosial, dampak negatif utama dari sikap tersebut adalah...
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q2" value="0" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">A. Semakin mahir menggunakan berbagai aplikasi permainan digital.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q2" value="1" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">B. Berkurangnya rasa empati, kepedulian terhadap tetangga, serta hilangnya kemampuan komunikasi langsung yang santun.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q2" value="2" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">C. Menghemat pengeluaran uang saku harian.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q2" value="3" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">D. Menjadi pribadi yang sangat mandiri tanpa bantuan siapapun selamanya.</span>
+                            </label>
+                        </div>
+                        <div id="expl-2" class="hidden p-3 rounded-lg text-xs mt-2 bg-ocean-100 border border-ocean-300 text-ocean-900">
+                            <strong>Analisis:</strong> Jawaban benar adalah <strong>B</strong>. Sifat individualistis memutus fitrah manusia sebagai makhluk sosial yang membutuhkan interaksi dan empati langsung.
+                        </div>
+                    </div>
+
+                    <!-- Soal 4 -->
+                    <div class="bg-ocean-50 p-5 rounded-xl border border-ocean-200 space-y-3 quiz-card" data-qid="3">
+                        <div class="flex justify-between items-center">
+                            <span class="bg-ocean-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Soal 4 dari 5</span>
+                            <span class="text-xs text-gray-500 font-medium">Level: Aplikasi Nilai Ibadah</span>
+                        </div>
+                        <p class="font-bold text-gray-800 text-sm sm:text-base">
+                            QS. Ad-Dzariyat ayat 56 menegaskan tujuan penciptaan jin dan manusia. Implementasi nyata ayat tersebut dalam kehidupan sehari-hari pelajar adalah...
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q3" value="0" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">A. Beribadah ritual di masjid sepanjang hari tanpa mau sekolah.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q3" value="1" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">B. Menjadikan setiap aktivitas positif seperti belajar, membantu orang tua, dan bersosialisasi bernilai ibadah jika diniatkan karena Allah.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q3" value="2" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">C. Beribadah hanya ketika menghadapi ujian sekolah.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q3" value="3" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">D. Menyerahkan seluruh urusan hidup kepada takdir tanpa ikhtiar.</span>
+                            </label>
+                        </div>
+                        <div id="expl-3" class="hidden p-3 rounded-lg text-xs mt-2 bg-ocean-100 border border-ocean-300 text-ocean-900">
+                            <strong>Analisis:</strong> Jawaban benar adalah <strong>B</strong>. Konsep ibadah dalam Islam bersifat luas (syumul), mencakup seluruh amal kebaikan yang diniatkan karena Allah.
+                        </div>
+                    </div>
+
+                    <!-- Soal 5 -->
+                    <div class="bg-ocean-50 p-5 rounded-xl border border-ocean-200 space-y-3 quiz-card" data-qid="4">
+                        <div class="flex justify-between items-center">
+                            <span class="bg-ocean-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Soal 5 dari 5</span>
+                            <span class="text-xs text-gray-500 font-medium">Level: Reflektif Komprehensif</span>
+                        </div>
+                        <p class="font-bold text-gray-800 text-sm sm:text-base">
+                            Mengapa ketiga pilar (Makhluk Tuhan, Makhluk Hidup, dan Makhluk Sosial) harus berjalan secara seimbang dalam diri seorang muslim?
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q4" value="0" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">A. Agar menjadi manusia yang utuh, bahagia di dunia dan akhirat, serta tidak mengabaikan hak Allah maupun hak sesama makhluk.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q4" value="1" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">B. Agar mendapat nilai rapor PAI yang sempurna dari guru di kelas.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q4" value="2" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">C. Agar terkenal di sekolah sebagai siswa yang paling aktif berorganisasi.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 bg-white rounded-lg border border-ocean-100 hover:bg-ocean-50 cursor-pointer transition">
+                                <input type="radio" name="q4" value="3" class="mt-1 text-ocean-600">
+                                <span class="text-xs sm:text-sm text-gray-700">D. Agar terhindar dari teguran orang tua di rumah.</span>
+                            </label>
+                        </div>
+                        <div id="expl-4" class="hidden p-3 rounded-lg text-xs mt-2 bg-ocean-100 border border-ocean-300 text-ocean-900">
+                            <strong>Analisis:</strong> Jawaban benar adalah <strong>A</strong>. Keseimbangan ketiga pilar mencerminkan pribadi muslim yang paripurna (kaffah) dalam menjalankan peran hidupnya.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tombol Cek Kuis -->
+                <div class="mt-6 pt-4 border-t border-gray-200 flex flex-wrap justify-between items-center gap-4">
+                    <button onclick="submitQuiz()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded-xl transition shadow-md text-sm flex items-center space-x-2">
+                        <i class="fa-solid fa-check-to-slot"></i>
+                        <span>Cek Jawaban & Analisis</span>
+                    </button>
+                    <div id="quiz-result-box" class="hidden text-right">
+                        <span class="text-xs text-gray-500 block">Skor Kuis Anda:</span>
+                        <span id="quiz-score-display" class="text-xl font-bold text-purple-600">0 / 5 (0%)</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-start">
+                    <button onclick="switchTab('game')" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-5 py-2.5 rounded-xl transition text-sm">
+                        <i class="fa-solid fa-arrow-left mr-1"></i> Kembali ke Mini-Game
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-ocean-100 py-4 mt-8 text-center text-xs text-gray-500">
+        <p>Media Pembelajaran Interaktif PAI Kelas 7 Kurikulum Merdeka &copy; 2026 • Hakikat Manusia (Hamba, Biologis, Sosial)</p>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // Navigasi Tab
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-white/20', 'text-white');
+                btn.classList.add('text-ocean-100', 'hover:bg-white/10');
+            });
+
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if(activeBtn) {
+                activeBtn.classList.remove('text-ocean-100', 'hover:bg-white/10');
+                activeBtn.classList.add('bg-white/20', 'text-white');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Data Mini-Game Gamifikasi Naratif
+        const gameData = [
+            {
+                category: "Dimensi Makhluk Tuhan (Ibadah)",
+                question: "Adzan berkumandang saat kamu sedang asyik bermain game online bersama teman. Tindakan paling bijak sebagai hamba Allah adalah...",
+                options: [
+                    { text: "Segera mematikan game, mengambil air wudhu, dan bergegas shalat berjamaah.", correct: true },
+                    { text: "Melanjutkan game sampai selesai baru kemudian shalat di akhir waktu.", correct: false }
+                ],
+                explanation: "Tepat! Mendahulukan panggilan Allah Swt. di atas kesenangan duniawi adalah wujud keimanan yang benar."
+            },
+            {
+                category: "Dimensi Makhluk Hidup (Biologis)",
+                question: "Besok ada ulangan harian. Temanmu mengajak begadang semalaman suntuk demi main game. Sebagai makhluk hidup yang menjaga kesehatan, apa keputusanmu?",
+                options: [
+                    { text: "Ikut begadang sepanjang malam agar tidak dibilang penakut oleh teman.", correct: false },
+                    { text: "Belajar secukupnya lalu tidur teratur agar tubuh dan otak bugar menghadapi ulangan.", correct: true }
+                ],
+                explanation: "Hebat! Menjaga stamina dan kesehatan fisik adalah bentuk syukur atas amanah jasad dari Allah."
+            },
+            {
+                category: "Dimensi Makhluk Sosial",
+                question: "Kamu melihat seorang teman sekelas terlihat sedih dan menyendiri di pojok kelas karena diejek temannya. Sikapmu sebagai makhluk sosial yang berakhlak adalah...",
+                options: [
+                    { text: "Ikut menertawakan agar ikut populer di geng kelas.", correct: false },
+                    { text: "Menghampiri, menghibur, dan mengajaknya bergabung untuk menunjukkan empati.", correct: true }
+                ],
+                explanation: "Benar sekali! Empati dan tolong-menolong adalah pilar utama dalam interaksi sosial islami."
+            },
+            {
+                category: "Dimensi Integrasi (Ketiganya)",
+                question: "Bagaimana cara terbaik menyatukan peran sebagai hamba Allah, makhluk biologis, dan makhluk sosial dalam satu hari penuh?",
+                options: [
+                    { text: "Menjalankan ibadah wajib dengan baik, menjaga kesehatan tubuh, serta berbuat baik kepada sesama manusia.", correct: true },
+                    { text: "Fokus bersosialisasi saja dan melupakan ibadah ritual.", correct: false }
+                ],
+                explanation: "Luar biasa! Keseimbangan ketiga pilar tersebut membentuk karakter muslim yang paripurna."
+            }
+        ];
+
+        let currentGameIndex = 0;
+        let gameScore = 0;
+
+        function loadGameQuestion() {
+            if(currentGameIndex >= gameData.length) {
+                document.getElementById('game-container').classList.add('hidden');
+                document.getElementById('game-complete').classList.remove('hidden');
+                document.getElementById('game-score').innerText = gameScore;
+                return;
+            }
+
+            const current = gameData[currentGameIndex];
+            document.getElementById('game-progress').innerText = `${currentGameIndex + 1} / ${gameData.length}`;
+            document.getElementById('game-score').innerText = gameScore;
+            document.getElementById('game-category-badge').innerText = current.category;
+            document.getElementById('game-question').innerText = current.question;
+            
+            const optionsEl = document.getElementById('game-options');
+            optionsEl.innerHTML = '';
+            
+            const feedbackEl = document.getElementById('game-feedback');
+            feedbackEl.classList.add('hidden');
+
+            current.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "p-4 text-left bg-white rounded-xl border border-ocean-200 hover:border-ocean-500 hover:bg-ocean-50 transition text-sm font-medium text-gray-800 shadow-sm";
+                btn.innerHTML = `<i class="fa-solid fa-circle-chevron-right text-ocean-600 mr-2"></i> ${opt.text}`;
+                btn.onclick = () => handleGameAnswer(opt.correct, current.explanation);
+                optionsEl.appendChild(btn);
+            });
+        }
+
+        function handleGameAnswer(isCorrect, explanation) {
+            const feedbackEl = document.getElementById('game-feedback');
+            feedbackEl.classList.remove('hidden');
+            
+            if(isCorrect) {
+                gameScore += 25;
+                feedbackEl.className = "p-4 rounded-xl text-sm font-medium bg-green-100 border border-green-300 text-green-900";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-check text-green-700 mr-2"></i> <strong>Pilihan Tepat!</strong> ${explanation}`;
+            } else {
+                feedbackEl.className = "p-4 rounded-xl text-sm font-medium bg-amber-100 border border-amber-300 text-amber-900";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-amber-700 mr-2"></i> <strong>Kurang tepat.</strong> ${explanation}`;
+            }
+
+            // Disable options
+            const buttons = document.getElementById('game-options').querySelectorAll('button');
+            buttons.forEach(b => b.disabled = true);
+
+            // Auto next after 3.5 seconds
+            setTimeout(() => {
+                currentGameIndex++;
+                loadGameQuestion();
+            }, 3500);
+        }
+
+        function resetGame() {
+            currentGameIndex = 0;
+            gameScore = 0;
+            document.getElementById('game-container').classList.remove('hidden');
+            document.getElementById('game-complete').classList.add('hidden');
+            loadGameQuestion();
+        }
+
+        // Evaluasi Kuis HOTS
+        function submitQuiz() {
+            const correctAnswers = [1, 1, 1, 1, 0]; // Indeks jawaban benar untuk soal 0-4
+            let scoreCount = 0;
+
+            for(let i = 0; i < correctAnswers.length; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const explEl = document.getElementById(`expl-${i}`);
+                explEl.classList.remove('hidden');
+
+                if(selected && parseInt(selected.value) === correctAnswers[i]) {
+                    scoreCount++;
+                }
+            }
+
+            const percentage = (scoreCount / correctAnswers.length) * 100;
+            const resBox = document.getElementById('quiz-result-box');
+            const resDisplay = document.getElementById('quiz-score-display');
+            
+            resBox.classList.remove('hidden');
+            resDisplay.innerText = `${scoreCount} / ${correctAnswers.length} (${percentage}%)`;
+            
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        // Inisialisasi Game saat halaman dimuat
+        window.onload = function() {
+            loadGameQuestion();
+        };
+    </script>
+</body>
+</html>
